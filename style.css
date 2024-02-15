@@ -454,10 +454,10 @@ label {
 
 .theme{
     display: flex;
-    
+    z-index: 999;
     justify-content: center;
     align-items: center;
-    margin-left: -50px;
+    margin-left: -20%;
     margin-top: 20px;
 }
 .button-theme{
@@ -647,6 +647,11 @@ input:checked + .button-theme::before{
     .calculator input[type="text"] {
         font-size: 18px;
     }
+    .main-text-down,
+    .main-p{
+        margin-left: 3px;
+        margin-right: 3px;
+    }
 }
 
 /* Для очень узких экранов, например, мобильных телефонов */
@@ -657,6 +662,15 @@ input:checked + .button-theme::before{
     }
     .calculator input[type="text"] {
         font-size: 16px;
+    }
+    .sidebar{
+        width: 200px;
+    }
+    .theme{
+        margin-left: 0%;
+    }
+    main{
+        margin-left: 210px;
     }
 }
 
