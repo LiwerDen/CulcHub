@@ -1,0 +1,768 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+i{
+    font-size: 1.7rem;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    background-color: rgb(252, 247, 247);
+    overflow-x: hidden;
+    transition: all 0.7s ease;
+}
+.sidebar{
+   position: fixed;
+   top: 0;
+   left: 0;
+   margin-right: 260px;
+   background-color: white;
+   width: 250px;
+   height: 100%;
+   z-index: 999;
+   overflow-x: hidden;
+   scrollbar-width: none;
+   transition: all 0.3s linear;
+}
+.sidebar.close{
+    width: 60px !important;
+    transition: all 0.3s linear;
+
+}
+main.close{
+    margin-left: 70px;
+}
+.logo{
+    font-size: 24px;
+    font-weight: 700;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    z-index: 500;
+    color: rgb(24, 24, 240);
+    text-align: center;
+    box-sizing: content-box;
+    margin-top: 20px;
+    
+}
+.logo span {
+    color: rgb(24, 24, 240);
+    margin-left: -30px;
+    font-size: 2.2rem;
+    margin-top: 19px;
+}
+.logo .fa-calculator{
+    color: rgb(24, 24, 240);
+}
+.logo-a{
+    text-align: center;
+    display: flex;
+    margin-left: 30px;
+}
+.sidebar .logo .fa-calculator{
+    min-width: 60px;
+    justify-content: center;
+    display: flex;
+    font-size: 2.2rem;
+    margin: 0 15%;
+    z-index: 999;
+    padding: 20px;
+    margin-left: -5px;
+    margin-right: 1px;
+    margin-top: 0px;
+}
+
+.sidebar-menu{
+    width: 100%;
+    margin-top: 48px;
+}
+.closed{
+    margin-left: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.fa-sign-in{
+    margin-right: 10px;
+}
+.closed-btn a{
+    color: black;
+    align-items: center;
+    display: flex;
+    transition: all 0.3s ease;
+}
+.closed-btn a:hover{
+    color: rgb(255, 0, 0);
+}
+.sidebar.close .closed{
+    margin-left: 20px;
+}
+.sidebar.close .fa-sign-in{
+    margin-right: 20px;
+}
+.sidebar-menu li{
+    height: 48px;
+    background: transparent;
+    margin-left: 6px;
+    border-radius: 48px 0 0 48px;
+    padding: 4px;
+}
+.sidebar .sidebar-menu li.active{
+    background-color: rgb(250, 247, 247);
+    position: relative;
+}
+.sidebar .sidebar-menu li.active::before{
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 rgb(250, 247, 247);
+    z-index: -1;
+}
+.sidebar .sidebar-menu li.active::after{
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 rgb(250, 247, 247);
+    z-index: -1;
+}
+.sidebar .sidebar-menu li a{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 16px;
+    color: rgb(15, 15, 15);
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 0.3 ease;
+    padding-left: 10px;
+    
+}
+.sidebar .sidebar-menu li a:hover{
+    color: rgb(255, 0, 0);
+}
+
+.sidebar .sidebar-menu li.active a{
+    color: rgb(94, 156, 0);
+}
+.sidebar.close .sidebar-menu li a{
+    width: calc(48px - (4px * 2));
+    transition: all 0.3 ease;
+    text-align: center;
+    right: 10px;
+    
+}
+.sidebar.close .logo .fa-calculator {
+    margin-left: -58px; 
+    padding: 35px; 
+}
+.sidebar.close .sidebar-menu li a i{
+    font-size: 1.9rem;
+    display: flex;
+    margin-left: -5px;
+    padding-right: 16px;
+}
+
+.sidebar .sidebar-menu li a i{
+    min-width: calc(60px - ((4px + 6px) * 2));
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+.sidebar.close .theme i{
+    display: none;
+}
+.sidebar.close .theme .button-theme{
+    margin-left: 56px;
+    height: 10px;
+}
+.sidebar.close .button-theme::before{
+    width: 20px;
+    height: 20px;
+}
+.sidebar.close input:checked + .button-theme::before{
+    transform: translateX(18px);
+}
+.sidebar.close .sidebar-menu li {
+    width: calc(60px - 8px); /* Измените ширину элементов меню */
+}
+.menu{
+    margin-left: 28px;
+    font-size: 1.5rem;
+    margin-top: -60px;
+    color: black;
+    margin-bottom: 78px;
+    padding: 0px 0px;
+    transition: all 0s linear;
+}
+
+.sidebar.close .menu{
+    margin-top: -10px;
+    margin-left: 6px;
+    padding: 15px;
+}
+
+.about{
+    font-size: 3.2rem;
+    color: rgb(15, 15, 15);
+    position: relative;
+    
+}
+main{
+    margin-left: 260px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 25px;
+    z-index: 999;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding: 10px 10px;
+    position: relative;
+}
+.main-header-text{
+    font-size: 3rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.main-text{
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+.main-text-down{
+    font-size: 1.8rem;
+    color: black;
+    margin-left: 90px;
+    font-weight: 700;
+}
+.main-sp{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.main-p{
+    font-size: 1.8rem;
+    color: black;
+    margin-left: 90px;
+    font-weight: 700;
+}
+.main-pp{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.main-txt{
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    transition: all 3s ease;
+}
+.main-txt a{
+    color: black;
+}
+.main-txt a:hover{
+    color: blueviolet;
+    transition: all 0.2s ease;
+}
+.main-text-s{
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.system-num{
+    text-align: center;
+}
+.btn{
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 5px;
+}
+label {
+    color: #333; 
+    font-size: 20px; 
+    font-family: Arial, sans-serif; 
+    font-weight: bold;
+    margin-bottom: 20px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+.numInpt{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: antiquewhite
+}
+.redio-b{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    color: black;
+}
+#output, #outputresult{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+#numberResult {
+    color: rgb(25, 0, 255);
+    font-weight: bold;
+}
+.text-calculator{
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.header-text-calculate{
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -230px;
+}
+.calculator {
+    max-width: 320px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    background-color: #fff;
+    margin-top: 200px;
+}
+.calculator input[type="button"] {
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.calculator input[type="text"] {
+    grid-column: span 4;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+    .calculator {
+        max-width: 100%;
+    }
+    .calculator input[type="button"] {
+        padding: 15px;
+        font-size: 14px;
+    }
+    .calculator input[type="text"] {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .calculator input[type="button"] {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .calculator input[type="text"] {
+        font-size: 16px;
+    }
+}
+
+
+.header-text-d{
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.text-disc{
+    text-align: center;
+    font-weight: 700;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+.button{
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 5px;
+}
+.disc{
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.theme{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    margin-left: -50px;
+    margin-top: 20px;
+}
+.button-theme{
+    background-color: #d2d2d2;
+    width: 90px;
+    height: 20px;
+    border-radius: 80px;
+    cursor: pointer;
+    position: relative;
+    
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.button-theme::before{
+    position: absolute;
+    content: "";
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0px;
+    margin: 5px;
+    transition: 0.5s;
+    
+}
+input:checked + .button-theme{
+    background-color: #20096d;
+}
+input:checked + .button-theme::before{
+    transform: translateX(50px);
+}
+#check{
+    display: none;
+}
+.theme-icon{
+    
+    width: 30px;
+}
+.no-transition::before {
+    transition-duration: 0s !important;
+}
+.select-header{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.select-header ul li{
+    padding: 2px;
+    font-size: 1.19rem;
+    margin-bottom: 10px;
+}
+.text-coint,
+.text-county{
+    font-size: 2rem;
+
+}
+.text-coint span{
+    color: rgb(250, 38, 38);
+}
+.figure,
+#data{
+    text-align: center;
+}
+#formula{
+    font-size: 2rem;
+    margin: 5px;
+}
+#shape-img{
+    margin: 10px;
+    border-radius: 5%;
+}
+.figurine-text{
+    font-size: 2rem;
+    margin: 10px;
+}
+.figurine-select{
+    margin: 5px;
+    background-color: antiquewhite;
+    border-radius: 40px;
+    padding: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+#result_squares,
+#result_squares2{
+    margin: 5px;
+    font-size: 1.7rem;
+}
+@media screen and (max-width: 768px) {
+    #shape-img{
+        width: 95%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .figurine-select{
+        width: 100%;
+    }
+}
+
+.about{
+    text-align: center; 
+    color: black;
+}
+.avtor{
+    margin: 10px;
+    padding: 5px;
+    font-size: 3rem;
+}
+.dannie{
+    margin: 15px;
+    padding: 10px;
+    font-size: 2.5rem;
+}
+.dannie a{
+    color: rgb(0, 0, 0);
+    transition: all 0.4s ease;
+}
+.dannie a:hover{
+    transition: all 0.4s ease;
+    color: rgb(204, 136, 10);
+}
+.contact{
+    margin: 15px;
+    padding: 5px;
+    font-size: 2.5rem;
+}
+.contact a{
+    color: black;
+    transition: all 0.4s ease;
+}
+.contact a:hover{
+    color: #1e1e1e;
+}
+.fa-envelope{
+    color: red;
+    font-size: 2.4rem;
+    transition: all 0.4s ease;
+}
+.fa-envelope:hover{
+    color: rgb(184, 0, 0);
+}
+.fa-telegram{
+    font-size: 2.4rem;
+    transition: all 0.4s ease;
+    color: blue;
+}
+.fa-telegram:hover{
+    color: rgb(0, 0, 184);
+}
+.fa-vk{
+    font-size: 2.4rem;
+    transition: all 0.4s ease;
+    color: blue;
+}
+.fa-vk:hover{
+    color: rgb(0, 0, 184);
+}
+.contact span a{
+    transition: all 0.4s ease;
+}
+.contact  a:hover{
+    color: #ff5c5c;
+}
+#a,
+#b,
+#c{
+    margin: 5px;
+}
+.formuls{
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    font-size: 2rem;
+}
+.formuls span{
+    font-weight: 700;
+    font-size: 2.1rem;
+}
+@media screen and (max-width: 768px) {
+    .calculator {
+        max-width: 100%;
+    }
+    .calculator input[type="button"] {
+        padding: 15px;
+        font-size: 14px;
+    }
+    .calculator input[type="text"] {
+        font-size: 18px;
+    }
+}
+
+/* Для очень узких экранов, например, мобильных телефонов */
+@media screen and (max-width: 480px) {
+    .calculator input[type="button"] {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .calculator input[type="text"] {
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* Делаем тёмную тему */
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+.dark-mode .fa-regular .fa-sun,
+.dark-mode .fa-regular .fa-moon{
+    color: white;
+}
+.dark-mode .sidebar .sidebar-menu li.active::after{
+    box-shadow: 20px -20px 0 #121212;
+}
+.dark-mode .sidebar .sidebar-menu li.active::before{
+    box-shadow: 20px 20px 0 #121212;
+}
+.dark-mode .sidebar {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .sidebar-menu li a {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .sidebar-menu li.active {
+    background-color: #121212;
+}
+
+.dark-mode .sidebar .logo,
+.dark-mode .sidebar .logo span,
+.dark-mode .sidebar .logo .fa-calculator {
+    color: #fff;
+}
+
+.dark-mode main {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+.theme-icon
+.dark-mode .main-header-text,
+.dark-mode .main-text,
+.dark-mode .main-text-down,
+.dark-mode .main-sp,
+.dark-mode .main-p,
+.dark-mode .main-pp,
+.dark-mode .main-txt,
+.dark-mode .main-txt a,
+.dark-mode .main-text-s,
+.dark-mode .header-text-calculate,
+.dark-mode .header-text-d,
+.dark-mode .text-disc,
+.dark-mode label,
+.dark-mode .about,
+.dark-mode .contact a,
+.dark-mode .redio-b,
+.dark-mode #output,
+.dark-mode #outputresult,
+.dark-mode #numberResult,
+.dark-mode .text-calculator,
+.dark-mode .menu,
+.dark-mode .disc,
+.dark-mode .closed-btn a,
+.dark-mode .button-theme,
+.dark-mode input:checked + .button-theme::before,
+.dark-mode .main-header-text {
+    color: #fff;
+}
+.dark-mode .main-txt a:hover{
+    color: blueviolet;
+}
+.dark-mode .calculator {
+    border-color: #333;
+    background-color: #444;
+}
+
+.dark-mode .calculator input[type="button"] {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode .calculator input[type="text"] {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .dannie a{
+    color: rgb(241, 234, 234);
+    transition: all 0.4s ease;
+}
+.dark-mode .dannie a:hover{
+    transition: all 0.4s ease;
+    color: wheat;
+}
+.dark-mode .contact a:hover{
+    color: #ff5c5c;
+}
+.dark-mode .closed-btn a{
+    transition: all 0.3s ease;
+}
+.dark-mode .closed-btn a:hover{
+    color: rgb(255, 0, 0);
+}
